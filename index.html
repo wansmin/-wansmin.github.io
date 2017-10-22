@@ -334,20 +334,39 @@
 </ol>
 <p>其中，前三种包被称为java的基础包，本文将从以下两个包分别分析其中包含的类。</p>
 <h4 id="java-lang"><a href="#java-lang" class="headerlink" title="java.lang"></a>java.lang</h4><ul>
-<li><p>Object类。是除自己之外，所有java类的父类，但是接口不继承该类。这个类包含以下几个函数。</p>
-<p>| 类名                         | 作用                                       |<br>| ————————– | —————————————- |<br>| protected Object clone()   | 产生一个相同的类并且返回给调用者，使用这个函数的类必须要实现java.lang.Cloneable接口 |<br>| boolean equals(Object obj) | 检查一个对象与调用这个函数的对象是否相等                     |<br>| protected void finalize()  | 终止，释放系统资源                                |<br>| Class&lt; &gt;getClass           | 得到对象的类                                   |<br>| int hashCode()             | 返回给调用者此对象的哈希码，通常用于Hash集合                 |<br>| void wait(…)             | 等待线程                                     |<br>| void notifyall()           | 唤醒线程                                     |<br>| String toString()          | 根据调用对象返回对象的字符串形式                         |</p>
+<li><p><strong>Object类。</strong>是除自己之外，所有java类的父类，但是接口不继承该类。这个类包含以下几个函数。</p>
+<ul>
+<li><p>protected Object clone()        产生一个相同的类并且返回给调用者，使用这个函数的类必须要实现java.lang.Cloneable接口</p>
+</li>
+<li><p>boolean equals(Object obj)       检查一个对象与调用这个函数的对象是否相等 </p>
+</li>
+<li><p>protected void finalize()        终止，释放系统资源 </p>
+</li>
+<li><p>Class&lt; &gt;getClass       得到对象的类 </p>
+</li>
+<li><p>int hashCode()      返回给调用者此对象的哈希码，通常用于Hash集合 </p>
+</li>
+<li><p>void wait(…)       等待线程 </p>
+</li>
+<li><p>void notifyall()       唤醒线程 </p>
+</li>
+<li><p>String toString()       根据调用对象返回对象的字符串形式 </p>
 <p>关于这几个函数的应用以及深入研究请访问<a href="http://blog.csdn.net/jack_owen/article/details/39936483" target="_blank" rel="external">此链接</a>。</p>
 </li>
-<li><p>基本数据类型的类：String、Boolean、Character、Byte、Interger、Short、Long、Float、Double。这些都是基本类型的包装类。</p>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>基本数据类型的类</strong>：String、Boolean、Character、Byte、Interger、Short、Long、Float、Double。这些都是基本类型的包装类。</p>
 <ul>
 <li>说明一下String、StringBuffer、StringBuilder的区别：请访问<a href="http://www.cnblogs.com/A_ming/archive/2010/04/13/1711395.html" target="_blank" rel="external">此链接</a>。</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><p>Math类，封装了一些数学函数和常量。（三角、反三角、乘方、舍入..）</p>
+<li><p><strong>Math类</strong>，封装了一些数学函数和常量。（三角、反三角、乘方、舍入..）</p>
 </li>
-<li><p>System类，有标准输入、标准输出和错误输出流。其不能被实例化，但是</p>
+<li><p><strong>System类</strong>，有标准输入、标准输出和错误输出流。其不能被实例化，但是</p>
 <ul>
 <li><p>有三个非常有用的对象：</p>
 <ul>
@@ -368,25 +387,25 @@
 </li>
 </ul>
 <ul>
-<li><p>Runtime类，封装了运行时的环境，每个Java应用程序都有一个Runtime类实例。需要用的话请访问<a href="http://lavasoft.blog.51cto.com/62575/15565/" target="_blank" rel="external">此链接</a>。</p>
+<li><p><strong>Runtime类</strong>，封装了运行时的环境，每个Java应用程序都有一个Runtime类实例。需要用的话请访问<a href="http://lavasoft.blog.51cto.com/62575/15565/" target="_blank" rel="external">此链接</a>。</p>
 </li>
-<li><p>Thread类，包含线程相关的一系列函数。</p>
+<li><p><strong>Thread类</strong>，包含线程相关的一系列函数。</p>
 </li>
-<li><p>Throwable，异常类。</p>
+<li><p><strong>Throwable</strong>，异常类。</p>
 </li>
 </ul>
 <h4 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h4><ul>
-<li>日期时间类，常用的方法有：<ul>
+<li><strong>日期时间类</strong>，常用的方法有：<ul>
 <li>public int getYear()  、getMonth() 、getDate()、、、</li>
 <li>public boolean before(Date when) 、after 、equal</li>
 <li>toString()</li>
 </ul>
 </li>
-<li>Random，用于生成伪随机数流</li>
-<li>Vector，大致用法和C++一致</li>
-<li>ArrayList，与Vector大致相同，都实现了List接口，但是Vector是同步的，ArrayList是不同步的。</li>
-<li>HashSet，大致用法与C++一致，set接口，由Hash表支持。</li>
-<li>Iterator，迭代器，常用的几个用法：<ul>
+<li><strong>Random</strong>，用于生成伪随机数流</li>
+<li><strong>Vector</strong>，大致用法和C++一致</li>
+<li><strong>ArrayList</strong>，与Vector大致相同，都实现了List接口，但是Vector是同步的，ArrayList是不同步的。</li>
+<li><strong>HashSet</strong>，大致用法与C++一致，set接口，由Hash表支持。</li>
+<li><strong>Iterator</strong>，迭代器，常用的几个用法：<ul>
 <li>boolean hasNext() 如果仍有元素可以迭代，则返回true</li>
 <li>E next() 返回迭代的下一个元素</li>
 <li>void remove() 从迭代器指向的集合中移除迭代器返回的最后一个元素（可选操作）</li>
