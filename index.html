@@ -252,6 +252,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wansmin.github.io/2017/10/17/JAVA的几个常用类总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wansmin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万思敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/17/JAVA的几个常用类总结/" itemprop="url">JAVA的几个常用类总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T14:56:25+08:00">
+                2017-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Java有一系列功能强大的可重用类，分别在不同的包中，这些包按照功能可以划分为：</p>
+<ol>
+<li><strong>语言包 java.lang (language)</strong>，主要含有与语言相关的类，由解释程序自动加载，不需要显示说明。</li>
+<li><strong>输入输出包 java.io (input/output)</strong>，提供了对不同的输入和输出的支持。</li>
+<li><strong>实用程序包 java.util (utility)</strong>，包括许多具有特功能的类，比如日期、向量、哈希表等。</li>
+<li><strong>小程序应用包 java.applet</strong>，用来构建包含于HTML页内的applet必不可少的类。</li>
+<li><strong>图形用户接口包 java.swing &amp; java.awt</strong>，提供了创建图形用户界面的类。</li>
+<li><strong>网络包 java.net</strong>，含有与网络操作相关的类，如TCP sockets、URL等。</li>
+</ol>
+<p>其中，前三种包被称为java的基础包，本文将从以下两个包分别分析其中包含的类。</p>
+<h4 id="java-lang"><a href="#java-lang" class="headerlink" title="java.lang"></a>java.lang</h4><ul>
+<li><p>Object类。是除自己之外，所有java类的父类，但是接口不继承该类。这个类包含以下几个函数。</p>
+<p>| 类名                         | 作用                                       |<br>| ————————– | —————————————- |<br>| protected Object clone()   | 产生一个相同的类并且返回给调用者，使用这个函数的类必须要实现java.lang.Cloneable接口 |<br>| boolean equals(Object obj) | 检查一个对象与调用这个函数的对象是否相等                     |<br>| protected void finalize()  | 终止，释放系统资源                                |<br>| Class&lt; &gt;getClass           | 得到对象的类                                   |<br>| int hashCode()             | 返回给调用者此对象的哈希码，通常用于Hash集合                 |<br>| void wait(…)             | 等待线程                                     |<br>| void notifyall()           | 唤醒线程                                     |<br>| String toString()          | 根据调用对象返回对象的字符串形式                         |</p>
+<p>关于这几个函数的应用以及深入研究请访问<a href="http://blog.csdn.net/jack_owen/article/details/39936483" target="_blank" rel="external">此链接</a>。</p>
+</li>
+<li><p>基本数据类型的类：String、Boolean、Character、Byte、Interger、Short、Long、Float、Double。这些都是基本类型的包装类。</p>
+<ul>
+<li>说明一下String、StringBuffer、StringBuilder的区别：请访问<a href="http://www.cnblogs.com/A_ming/archive/2010/04/13/1711395.html" target="_blank" rel="external">此链接</a>。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Math类，封装了一些数学函数和常量。（三角、反三角、乘方、舍入..）</p>
+</li>
+<li><p>System类，有标准输入、标准输出和错误输出流。其不能被实例化，但是</p>
+<ul>
+<li><p>有三个非常有用的对象：</p>
+<ul>
+<li>static PrintStream err “错误输出流”</li>
+<li>static InputStream in “标准输入流”</li>
+<li>static PrintStream out “标准输出流”</li>
+</ul>
+</li>
+<li><p>常用的方法：</p>
+<ul>
+<li>static void arraycopy(..) 从指定数组源复制一个数组</li>
+<li>static long currentTimeMills() 返回以毫秒为单位的当前时间</li>
+<li>static void exit(int status) 终止当前正在运行的JAVA虚拟机</li>
+<li>static void gc() 运行垃圾回收器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Runtime类，封装了运行时的环境，每个Java应用程序都有一个Runtime类实例。需要用的话请访问<a href="http://lavasoft.blog.51cto.com/62575/15565/" target="_blank" rel="external">此链接</a>。</p>
+</li>
+<li><p>Thread类，包含线程相关的一系列函数。</p>
+</li>
+<li><p>Throwable，异常类。</p>
+</li>
+</ul>
+<h4 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h4><ul>
+<li>日期时间类，常用的方法有：<ul>
+<li>public int getYear()  、getMonth() 、getDate()、、、</li>
+<li>public boolean before(Date when) 、after 、equal</li>
+<li>toString()</li>
+</ul>
+</li>
+<li>Random，用于生成伪随机数流</li>
+<li>Vector，大致用法和C++一致</li>
+<li>ArrayList，与Vector大致相同，都实现了List接口，但是Vector是同步的，ArrayList是不同步的。</li>
+<li>HashSet，大致用法与C++一致，set接口，由Hash表支持。</li>
+<li>Iterator，迭代器，常用的几个用法：<ul>
+<li>boolean hasNext() 如果仍有元素可以迭代，则返回true</li>
+<li>E next() 返回迭代的下一个元素</li>
+<li>void remove() 从迭代器指向的集合中移除迭代器返回的最后一个元素（可选操作）</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wansmin.github.io/2017/10/16/关于我的博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -507,7 +696,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +709,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
